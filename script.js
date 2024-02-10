@@ -1,15 +1,13 @@
-const task = document.querySelector(".input-form");
-const taskAdded =document.querySelector(".tasks");
-let checkButtons = document.querySelectorAll(".check-task");
-task.onsubmit= function(e){
-    e.preventDefault();
-    const inputTask = document.querySelector(".your-task").value;
-    if(inputTask!=""){
-        taskAdded.innerHTML+=`
-        <div class="task">
-        <input type="checkbox" class="check-task">
-        <label>${inputTask}</label>
-    </div>   
-        `    
-    }
-}
+document.addEventListener('DOMContentLoaded', function () {
+  const incrementButtons = document.querySelectorAll('.incrementButton');
+  const counterValues = document.querySelectorAll('.counterValue');
+
+  incrementButtons.forEach((button, index) => {
+    let count = 0;
+
+    button.addEventListener('click', function () {
+      count++;
+      counterValues[index].textContent = count;
+    });
+  });
+});
